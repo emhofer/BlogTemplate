@@ -1,0 +1,138 @@
+/* ------Variables (Dark/Light)------ */
+:root:not(.dark) {
+  --background-color: #e1e1e1;
+  --primary-color: #ededed;
+  --font-color: #121212;
+}
+
+:root.dark {
+  --background-color: #cdcdcc;
+  --primary-color: #bcbcbb;
+  --font-color: #121212;
+}
+
+/* ------Main Styles------ */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid var(--font-color);
+  background-color: var(--primary-color);
+}
+
+#headerDiv {
+  margin: 0 2rem 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+
+#txtTitle {
+  display: inline-block;
+  font-style: oblique;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 1rem;
+  text-transform: capitalize;
+}
+
+img {
+  max-width: 100%;
+}
+
+.heroArea {
+  padding-bottom: 1rem;
+  max-height: 50vh;
+  text-align: center;
+}
+
+.heroArea img {
+  max-height: 50vh;
+  width: auto;
+  max-width: 100%;
+}
+
+
+#article-list {
+  margin: 0 1rem 1rem 1rem;
+  padding: 1rem;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.card {
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+  border-radius: 1rem;
+  min-height: 150px;
+  padding: 0 1em 0 1em;
+  display: inline-block;
+}
+
+.card:hover {
+  box-shadow: 2px 2px var(--font-color);
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+.card a,
+#article-content a {
+  color: var(--font-color);
+  text-decoration: none;
+  background-color: lightgoldenrodyellow;
+  padding: 0 2px;
+  border-radius: 5px;
+}
+
+#article-title,
+#article-content {
+  margin: 1rem;
+}
+
+#article-content p:has(img) {
+  text-align: center;
+}
+
+footer div {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem 0 1rem 0;
+  border-top: 1px solid var(--font-color);
+}
+
+@media only screen and (min-width: 768px) {
+  #article-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #article-wrapper {
+    margin: 0 20% 0 20%;
+  }
+
+}
