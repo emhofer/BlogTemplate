@@ -1,4 +1,5 @@
-// scripts/index.js
+import addToCart from "./cart.js";
+
 function fetchProducts() {
   const productsReq = new Request(
     "http://localhost:1337/api/products?populate=*"
@@ -45,7 +46,10 @@ function createProductCard(product) {
   let cartButton = document.createElement("button");
   cartButton.classList.add("cartButton");
   cartButton.innerHTML = "Add to cart";
-  cartButton.setAttribute("onclick", "testFunction()");
+  cartButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    addToCart(product);
+  });
 
   cardBody.append(
     productImage,
@@ -61,7 +65,3 @@ function createProductCard(product) {
 }
 
 fetchProducts();
-
-const testFunction = () => {
-  console.log("click");
-};

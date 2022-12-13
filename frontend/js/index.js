@@ -1,4 +1,3 @@
-// scripts/index.js
 function fetchArticles() {
   const articlesReq = new Request("http://localhost:1337/api/articles");
 

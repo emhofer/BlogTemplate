@@ -1,4 +1,3 @@
-// scripts/article.js
 function checkForArticle() {
   const urlParams = new URLSearchParams(window.location.search);
   const articleId = urlParams.get("id");

@@ -1,4 +1,5 @@
-// scripts/product.js
+import addToCart from "./cart.js";
+
 function checkForProduct() {
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("id");
@@ -46,7 +47,10 @@ function displayProduct(product) {
   let cartButton = document.createElement("button");
   cartButton.classList.add("cartButton");
   cartButton.innerHTML = "Add to cart";
-  cartButton.setAttribute("onclick", "testFunction()");
+  cartButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    addToCart(product);
+  });
 
   const wrapper = document.getElementById("product-wrapper");
   wrapper.insertBefore(productImage, wrapper.firstChild);
@@ -56,7 +60,3 @@ function displayProduct(product) {
 }
 
 checkForProduct();
-
-const testFunction = () => {
-  console.log("click");
-};
