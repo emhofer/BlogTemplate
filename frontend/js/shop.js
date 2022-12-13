@@ -17,6 +17,11 @@ function fetchProducts() {
 function createProductCard(product) {
   let card = document.createElement("div");
   card.classList.add("card");
+  card.onclick = () => {
+    window.location.assign(
+      `http://localhost:5501/frontend/pages/product.html?id=${product.id}`
+    );
+  };
 
   let cardBody = document.createElement("div");
   cardBody.classList.add("cardBody");

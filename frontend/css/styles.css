@@ -120,6 +120,10 @@ a {
   text-align: center;
 }
 
+#product-wrapper {
+  margin: 1rem;
+}
+
 footer div {
   display: flex;
   justify-content: space-evenly;
@@ -144,6 +148,13 @@ footer div {
 
   #article-wrapper {
     margin: 0 20% 0 20%;
+  }
+
+  #product-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    margin: 1rem 20% 1rem 20%;
   }
 
 }
