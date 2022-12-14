@@ -1,4 +1,4 @@
-import addToCart from "./cart.js";
+import addToCart from "./addToCart.js";
 
 function checkForProduct() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -24,7 +24,7 @@ function getProduct(id) {
         throw new Error(resp.statusText);
       }
     })
-    .then(displayProduct)
+    .then((product) => displayProduct(product))
     .catch();
 }
 
@@ -49,7 +49,7 @@ function displayProduct(product) {
   cartButton.innerHTML = "Add to cart";
   cartButton.addEventListener("click", (e) => {
     e.stopPropagation();
-    addToCart(product);
+    addToCart(product.data);
   });
 
   const wrapper = document.getElementById("product-wrapper");

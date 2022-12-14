@@ -1,17 +1,20 @@
-const addToCart = (item) => {
-  let currentCart = JSON.parse(localStorage.getItem("cart"));
+const cart = JSON.parse(localStorage.getItem("cart"));
 
-  if (!currentCart) {
-    localStorage.setItem("cart", JSON.stringify(item));
-    return;
-  } else if (Array.isArray(currentCart)) {
-    currentCart.push(item);
-    localStorage.setItem("cart", JSON.stringify(currentCart));
-    return;
-  } else {
-    let array = [currentCart, item];
-    localStorage.setItem("cart", JSON.stringify(array));
-  }
-};
+let tableBody = document.querySelector("tbody");
+console.log(cart.length);
+tableBody.removeChild(document.getElementById("errorLine"));
 
-export default addToCart;
+for (let i = 0; i < cart.length; i++) {
+  const { title, price } = cart[i].attributes;
+  console.log(title);
+  let cartRow = document.createElement("tr");
+  let rowTitle = document.createElement("td");
+  let rowPrice = document.createElement("td");
+
+  rowTitle.innerHTML = title;
+  rowPrice.innerHTML = price;
+
+  cartRow.append(rowTitle);
+  cartRow.append(rowPrice);
+  tableBody.append(cartRow);
+}

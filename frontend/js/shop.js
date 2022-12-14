@@ -1,4 +1,4 @@
-import addToCart from "./cart.js";
+import addToCart from "./addToCart.js";
 
 function fetchProducts() {
   const productsReq = new Request(
