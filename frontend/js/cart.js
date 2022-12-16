@@ -16,7 +16,7 @@ for (let i = 0; i < cart.length; i++) {
   rowTitle.innerHTML = title;
   rowPrice.innerHTML = price;
   rowQuantity.innerHTML = quantity;
-  rowSubtotal.innerHTML = quantity * price;
+  rowSubtotal.innerHTML = `${quantity * price}€`;
 
   cartRow.append(rowTitle);
   cartRow.append(rowPrice);
@@ -30,4 +30,4 @@ console.log(subtotalElements);
 for (let i = 0; i < subtotalElements.length; i++) {
   total += parseInt(subtotalElements[i].innerHTML);
 }
-document.querySelector("#cartTotal").innerHTML = `Total: ${total}`;
+document.querySelector("#cartTotal").innerHTML = `Total: ${total}€`;

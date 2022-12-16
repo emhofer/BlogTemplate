@@ -136,6 +136,20 @@ footer div {
   bottom: 0.5em;
 }
 
+table {
+  text-align: right;
+  margin: auto;
+  width: 90%;
+}
+
+table tr :nth-child(1) {
+  text-align: left;
+}
+
+#cartSummary tr :nth-child(1) {
+  text-align: right;
+}
+
 @media only screen and (min-width: 768px) {
 
   #article-list {
@@ -155,6 +169,11 @@ footer div {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
     margin: 1rem 20% 1rem 20%;
+  }
+
+  table {
+    width: 50%;
+    margin: 0 25% 0 25%;
   }
 
 }
