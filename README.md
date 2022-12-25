@@ -1,1 +1,1 @@
-A template for building blog websites with Strapi CMS.
+A template for building blogs with Strapi CMS.
