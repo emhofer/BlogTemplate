@@ -5,7 +5,7 @@ module.exports = function (eleventyConfig) {
   // Keeps the same directory structure.
   eleventyConfig.addPassthroughCopy("css/");
 
-  // Copy any .jpg file to `_site`, via Glob pattern
+  // Copy `assets/` to `_site/assets/`
   // Keeps the same directory structure.
-  eleventyConfig.addPassthroughCopy("**/*.jpg");
+  eleventyConfig.addPassthroughCopy("assets/");
 };

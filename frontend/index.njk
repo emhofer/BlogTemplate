@@ -1,10 +1,19 @@
 ---
 layout: mylayout.njk
-title: Blog Test
 ---
 
 <div class="heroArea">
-  <img src="./assets/heroImage.jpg" alt="StockImage">
-</div>
-<div id="article-list"></div>
-<script src="./js/index.js"></script>
+  <img src="./assets/heroImage.jpg" alt="StockImage"></div>
+  <div id="article-list">
+    {% for article in articles.data %}
+      {# TODO: Link article page #}
+      <div class="card" onclick="location.href='/articles/{{article.id}}';">
+        <div>
+          <h3>{{ article.attributes.title }}</h3>
+          {% set content = article.attributes.content.split(" ").slice(0, 20).join(" ").concat("...") %}
+          {% set imgRegEx = r/<img.*>/g %}
+          {{ content | replace(imgRegEx, "") | safe }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>

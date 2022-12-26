@@ -1,10 +1,13 @@
 ---
 layout: mylayout.njk
-title: Blog Test
+pagination:
+    data: articles.data
+    size: 1
+    alias: article
+permalink: "articles/{{ article.id | slug }}/"
 ---
 
 <div id="article-wrapper">
-  <h1 id="article-title"></h1>
-  <div id="article-content"></div>
+  <h1 id="article-title">{{ article.attributes.title}}</h1>
+  <div id="article-content">{{ article.attributes.content | safe }}</div>
 </div>
-<script src="../js/article.js"></script>
